@@ -1,0 +1,650 @@
+{
+  "color": {
+    "brand": {
+      "gold-deep": {
+        "$value": "#ae813d",
+        "$type": "color",
+        "$description": "CANONICAL — Brand Manual V2 + canonical SVGs · ceremonial · Cinzel · focus rings · founding texts · achievement markers · print"
+      },
+      "gold-champagne": {
+        "$value": "#c9b298",
+        "$type": "color",
+        "$description": "UI WORKHORSE — regular Studio accent · body italic emphasis · Hover-Reveal CTA target · badges · default icon fills · Liquid Gold/Champagne overlays"
+      },
+      "gold-bright": {
+        "$value": "#e4d8ca",
+        "$type": "color",
+        "$description": "Lightest tone — gradient top · subtle highlights"
+      },
+      "gold-soft": {
+        "$value": "#8d7556",
+        "$type": "color",
+        "$description": "Pressed states · gradient bottom · Cinzel on light backgrounds"
+      },
+      "gold": {
+        "$value": "#c9b298",
+        "$type": "color",
+        "$description": "Default alias — UI workhorse"
+      }
+    },
+    "surface": {
+      "base": {
+        "$value": "#070709",
+        "$type": "color",
+        "$description": "Body background — dominant 90%+ surface"
+      },
+      "elevate": {
+        "$value": "#141417",
+        "$type": "color",
+        "$description": "Cards · elevated panels"
+      },
+      "elevate-2": {
+        "$value": "#1f1f22",
+        "$type": "color",
+        "$description": "Modal · popover · dropdown"
+      },
+      "border": {
+        "$value": "#292929",
+        "$type": "color",
+        "$description": "Hairlines · dividers"
+      },
+      "warm-deep": {
+        "$value": "#14110a",
+        "$type": "color",
+        "$description": "Gradient stop 2 — founder card variant dark terminus · deep warm black (DA-002 · 2026-05-29)"
+      },
+      "print": {
+        "$value": "#1c282f",
+        "$type": "color",
+        "$description": "Print-only dark teal-navy per Brand Manual V2"
+      }
+    },
+    "text": {
+      "primary": {
+        "$value": "#fafafa",
+        "$type": "color",
+        "$description": "Body text · 100% alpha"
+      },
+      "mid": {
+        "$value": "rgba(250, 250, 250, 0.82)",
+        "$type": "color",
+        "$description": "Secondary text · 82% alpha (corrected from 0.68 — too dim)"
+      },
+      "dim": {
+        "$value": "rgba(250, 250, 250, 0.58)",
+        "$type": "color",
+        "$description": "Muted text · 58% alpha (corrected from 0.42)"
+      },
+      "faint": {
+        "$value": "rgba(250, 250, 250, 0.32)",
+        "$type": "color",
+        "$description": "Disabled · 32% alpha (corrected from 0.22)"
+      },
+      "ceremonial": {
+        "$value": "#ae813d",
+        "$type": "color",
+        "$description": "Cinzel display · founding texts · achievement markers"
+      },
+      "accent": {
+        "$value": "#c9b298",
+        "$type": "color",
+        "$description": "Regular gold inline emphasis · body italics"
+      }
+    },
+    "status": {
+      "success": {
+        "$value": "#22c55e",
+        "$type": "color"
+      },
+      "warning": {
+        "$value": "#f59e0b",
+        "$type": "color"
+      },
+      "error": {
+        "$value": "#ef4444",
+        "$type": "color"
+      },
+      "info": {
+        "$value": "#3b82f6",
+        "$type": "color"
+      }
+    },
+    "semantic": {
+      "clareza": {
+        "$value": "#070709",
+        "$type": "other",
+        "$description": "Pilar 1 — surface base · vazio = clareza · primeiro pilar do Método ITM"
+      },
+      "conhecimento": {
+        "$value": "#141417",
+        "$type": "other",
+        "$description": "Pilar 2 — camada acima da clareza · Conhecimento estruturado"
+      },
+      "atitude": {
+        "$value": "#ae813d",
+        "$type": "other",
+        "$description": "Pilar 3 — gold-deep · ação ceremonial · onde a verdade vira comando"
+      },
+      "corpo": {
+        "$value": "#fafafa",
+        "$type": "other",
+        "$description": "Tripartição — corpo · matéria densa · 100% alpha"
+      },
+      "alma": {
+        "$value": "rgba(250, 250, 250, 0.82)",
+        "$type": "other",
+        "$description": "Tripartição — alma · camada intermediária"
+      },
+      "espirito": {
+        "$value": "#ae813d",
+        "$type": "other",
+        "$description": "Tripartição — espírito · centelha cerimonial"
+      },
+      "fragmentacao": {
+        "$value": "#ef4444",
+        "$type": "other",
+        "$description": "Inimigo raiz — alert vermelho"
+      },
+      "modo-sobrevivencia": {
+        "$value": "rgba(250, 250, 250, 0.58)",
+        "$type": "other",
+        "$description": "Sintoma público — cinza dim"
+      },
+      "soberania": {
+        "$value": "#ae813d",
+        "$type": "other",
+        "$description": "Outcome promise — gold-deep cerimonial"
+      }
+    }
+  },
+  "typography": {
+    "scale": {
+      "ratio": {
+        "$value": 1.2,
+        "$type": "number",
+        "$description": "Minor Third musical ratio · perceptually balanced typography scale"
+      },
+      "base": {
+        "$value": 16,
+        "$type": "number",
+        "$description": "Base font size in px · scale derives from this"
+      },
+      "sizes": {
+        "2xs": {
+          "$value": "0.579rem",
+          "$type": "dimension",
+          "$description": "~9px"
+        },
+        "xs": {
+          "$value": "0.694rem",
+          "$type": "dimension",
+          "$description": "~11px"
+        },
+        "sm": {
+          "$value": "0.833rem",
+          "$type": "dimension",
+          "$description": "~13px"
+        },
+        "base": {
+          "$value": "1rem",
+          "$type": "dimension",
+          "$description": "16px"
+        },
+        "lg": {
+          "$value": "1.2rem",
+          "$type": "dimension",
+          "$description": "~19px"
+        },
+        "xl": {
+          "$value": "1.44rem",
+          "$type": "dimension",
+          "$description": "~23px"
+        },
+        "2xl": {
+          "$value": "1.728rem",
+          "$type": "dimension",
+          "$description": "~28px"
+        },
+        "3xl": {
+          "$value": "2.074rem",
+          "$type": "dimension",
+          "$description": "~33px"
+        },
+        "4xl": {
+          "$value": "2.488rem",
+          "$type": "dimension",
+          "$description": "~40px"
+        },
+        "5xl": {
+          "$value": "2.986rem",
+          "$type": "dimension",
+          "$description": "~48px"
+        },
+        "cinematic": {
+          "$value": "5.25rem",
+          "$type": "dimension",
+          "$description": "~84px (Lamborghini · marketing hero only)"
+        }
+      }
+    },
+    "weight": {
+      "light": {
+        "$value": 300,
+        "$type": "fontWeight"
+      },
+      "normal": {
+        "$value": 400,
+        "$type": "fontWeight"
+      },
+      "medium": {
+        "$value": 500,
+        "$type": "fontWeight"
+      },
+      "semibold": {
+        "$value": 600,
+        "$type": "fontWeight"
+      },
+      "bold": {
+        "$value": 700,
+        "$type": "fontWeight"
+      }
+    },
+    "line-height": {
+      "none": {
+        "$value": 1,
+        "$type": "number"
+      },
+      "tight": {
+        "$value": 1.25,
+        "$type": "number"
+      },
+      "snug": {
+        "$value": 1.375,
+        "$type": "number"
+      },
+      "normal": {
+        "$value": 1.5,
+        "$type": "number"
+      },
+      "relaxed": {
+        "$value": 1.625,
+        "$type": "number"
+      },
+      "loose": {
+        "$value": 1.75,
+        "$type": "number"
+      }
+    },
+    "letter-spacing": {
+      "tight": {
+        "$value": "-0.04em",
+        "$type": "dimension",
+        "$description": "display ≥48px (Krea-style)"
+      },
+      "normal": {
+        "$value": "0.012em",
+        "$type": "dimension",
+        "$description": "body (research-backed reading)"
+      },
+      "metadata": {
+        "$value": "0.05em",
+        "$type": "dimension",
+        "$description": "mono captions · uppercase"
+      },
+      "wordmark": {
+        "$value": "0.06em",
+        "$type": "dimension",
+        "$description": "Cinzel wordmark"
+      }
+    },
+    "measure": {
+      "narrow": {
+        "$value": "45ch",
+        "$type": "dimension"
+      },
+      "base": {
+        "$value": "65ch",
+        "$type": "dimension",
+        "$description": "editorial sweet spot (Medium/NYT/Guardian)"
+      },
+      "wide": {
+        "$value": "75ch",
+        "$type": "dimension"
+      },
+      "max": {
+        "$value": "80ch",
+        "$type": "dimension"
+      }
+    }
+  },
+  "spacing": {
+    "base": {
+      "$value": 4,
+      "$type": "number",
+      "$description": "Base spacing unit in px · scale derives from this"
+    },
+    "scale": {
+      "1": {
+        "$value": "4px",
+        "$type": "dimension"
+      },
+      "2": {
+        "$value": "8px",
+        "$type": "dimension"
+      },
+      "3": {
+        "$value": "12px",
+        "$type": "dimension"
+      },
+      "4": {
+        "$value": "16px",
+        "$type": "dimension"
+      },
+      "5": {
+        "$value": "20px",
+        "$type": "dimension"
+      },
+      "6": {
+        "$value": "24px",
+        "$type": "dimension"
+      },
+      "7": {
+        "$value": "28px",
+        "$type": "dimension"
+      },
+      "8": {
+        "$value": "32px",
+        "$type": "dimension"
+      },
+      "9": {
+        "$value": "36px",
+        "$type": "dimension"
+      },
+      "10": {
+        "$value": "40px",
+        "$type": "dimension"
+      },
+      "11": {
+        "$value": "44px",
+        "$type": "dimension"
+      },
+      "12": {
+        "$value": "48px",
+        "$type": "dimension"
+      },
+      "14": {
+        "$value": "56px",
+        "$type": "dimension"
+      },
+      "16": {
+        "$value": "64px",
+        "$type": "dimension"
+      },
+      "20": {
+        "$value": "80px",
+        "$type": "dimension"
+      },
+      "24": {
+        "$value": "96px",
+        "$type": "dimension"
+      },
+      "px": {
+        "$value": "1px",
+        "$type": "dimension"
+      },
+      "0-5": {
+        "$value": "2px",
+        "$type": "dimension"
+      },
+      "1-5": {
+        "$value": "6px",
+        "$type": "dimension"
+      },
+      "2-5": {
+        "$value": "10px",
+        "$type": "dimension"
+      },
+      "3-5": {
+        "$value": "14px",
+        "$type": "dimension"
+      },
+      "section": {
+        "$value": "100px",
+        "$type": "dimension",
+        "$description": "Lamborghini section-rhythm steal"
+      }
+    },
+    "content_width": {
+      "narrow": {
+        "$value": "320px",
+        "$type": "dimension"
+      },
+      "compact": {
+        "$value": "540px",
+        "$type": "dimension"
+      },
+      "reading": {
+        "$value": "680px",
+        "$type": "dimension"
+      },
+      "marketing": {
+        "$value": "780px",
+        "$type": "dimension"
+      },
+      "comfortable": {
+        "$value": "900px",
+        "$type": "dimension"
+      },
+      "wide": {
+        "$value": "1200px",
+        "$type": "dimension"
+      },
+      "max": {
+        "$value": "1400px",
+        "$type": "dimension",
+        "$description": "Tailwind 2xl container"
+      }
+    }
+  },
+  "rounded": {
+    "none": {
+      "$value": "0",
+      "$type": "dimension"
+    },
+    "xs": {
+      "$value": "2px",
+      "$type": "dimension",
+      "$description": "tooltips"
+    },
+    "sm": {
+      "$value": "4px",
+      "$type": "dimension",
+      "$description": "badges · small buttons"
+    },
+    "md": {
+      "$value": "8px",
+      "$type": "dimension",
+      "$description": "default buttons · inputs"
+    },
+    "lg": {
+      "$value": "12px",
+      "$type": "dimension",
+      "$description": "smaller cards"
+    },
+    "xl": {
+      "$value": "14px",
+      "$type": "dimension",
+      "$description": "cards (Krea/Huly standard)"
+    },
+    "2xl": {
+      "$value": "20px",
+      "$type": "dimension",
+      "$description": "premium cards (Liquid Champagne)"
+    },
+    "full": {
+      "$value": "9999px",
+      "$type": "dimension",
+      "$description": "pills · avatars"
+    }
+  },
+  "border_width": {
+    "0": {
+      "$value": "0",
+      "$type": "dimension"
+    },
+    "thin": {
+      "$value": "1px",
+      "$type": "dimension"
+    },
+    "medium": {
+      "$value": "2px",
+      "$type": "dimension"
+    },
+    "thick": {
+      "$value": "3px",
+      "$type": "dimension"
+    }
+  },
+  "shadow": {
+    "none": {
+      "$value": "none",
+      "$type": "shadow"
+    },
+    "sm": {
+      "$value": "0 1px 2px rgba(0,0,0,0.2)",
+      "$type": "shadow"
+    },
+    "md": {
+      "$value": "0 4px 6px rgba(0,0,0,0.3)",
+      "$type": "shadow"
+    },
+    "glow_gold": {
+      "$value": "0 0 15px rgba(174, 129, 61, 0.3)",
+      "$type": "other",
+      "$description": "gold-deep glow · Glowing button default"
+    },
+    "glow_gold_hover": {
+      "$value": "0 0 25px rgba(174, 129, 61, 0.5)",
+      "$type": "other",
+      "$description": "gold-deep glow · Glowing button hover"
+    },
+    "glow_champagne": {
+      "$value": "0 0 15px rgba(201, 178, 152, 0.3)",
+      "$type": "other"
+    },
+    "lg_gold": {
+      "$value": "0 10px 40px rgba(201, 178, 152, 0.25)",
+      "$type": "other",
+      "$description": "Gold-tinted drop shadow · Academia Lendária pattern"
+    },
+    "liquid_champagne": {
+      "$value": "0 0 2px .5px rgba(0,0,0,0.2),\n0 0 4px 1px rgba(0,0,0,0.1),\n0 0 8px 2px rgba(0,0,0,0.05),\n0 0 0 .5px #000,\ninset 0 0 0 1px rgba(201,178,152,0.08),\ninset 0 0 3px 1px rgba(201,178,152,0.10),\ninset 0 .5px 0 .5px rgba(201,178,152,0.10)\n",
+      "$type": "shadow",
+      "$description": "TOP STEAL #2 · Krea 7-shadow recipe re-tinted in champagne · cards & elevated surfaces · render-engine UI feel"
+    }
+  },
+  "motion": {
+    "ease": {
+      "default": {
+        "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "$type": "cubicBezier"
+      },
+      "emphasis": {
+        "$value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "$type": "cubicBezier"
+      },
+      "linear": {
+        "$value": "linear",
+        "$type": "cubicBezier",
+        "$description": "Standard linear easing"
+      }
+    },
+    "duration": {
+      "micro": {
+        "$value": "150ms",
+        "$type": "duration"
+      },
+      "short": {
+        "$value": "200ms",
+        "$type": "duration"
+      },
+      "medium": {
+        "$value": "300ms",
+        "$type": "duration"
+      },
+      "long": {
+        "$value": "500ms",
+        "$type": "duration"
+      }
+    },
+    "keyframe": {
+      "shimmer": {
+        "duration": {
+          "$value": "1500ms",
+          "$type": "duration",
+          "$description": "Liquid Gold button shimmer · duration"
+        },
+        "iteration": {
+          "$value": "infinite",
+          "$type": "other",
+          "$description": "CSS animation-iteration-count · non-canonical DTCG type"
+        }
+      },
+      "float": {
+        "duration": {
+          "$value": "3s",
+          "$type": "duration"
+        },
+        "iteration": {
+          "$value": "infinite",
+          "$type": "other"
+        },
+        "timing": {
+          "$value": "ease-in-out",
+          "$type": "other"
+        }
+      },
+      "pulse_slow": {
+        "duration": {
+          "$value": "3s",
+          "$type": "duration"
+        },
+        "iteration": {
+          "$value": "infinite",
+          "$type": "other"
+        },
+        "timing": {
+          "$value": "ease-in-out",
+          "$type": "other"
+        }
+      }
+    }
+  },
+  "gradient": {
+    "hero": {
+      "$value": "linear-gradient(170deg, #070709 0%, #1A150F 55%, #3A2F22 100%)",
+      "$type": "string",
+      "$description": "Cinematic dark hero · gold-tinted bottom"
+    },
+    "card": {
+      "$value": "linear-gradient(180deg, #070709 0%, #14110A 100%)",
+      "$type": "string",
+      "$description": "Subtle card surface gradient"
+    },
+    "section": {
+      "$value": "linear-gradient(170deg, #070709 0%, #1A150F 55%, #2D2418 100%)",
+      "$type": "string",
+      "$description": "Section background · subtle gold descent"
+    },
+    "gold": {
+      "$value": "linear-gradient(135deg, #E4D8CA 0%, #C9B298 50%, #8D7556 100%)",
+      "$type": "string",
+      "$description": "Brand gold gradient · light-to-dark champagne"
+    },
+    "gold_shimmer": {
+      "$value": "linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 60%)",
+      "$type": "string",
+      "$description": "Shimmer overlay · used with motion.keyframe.shimmer for Liquid Gold button effect"
+    }
+  }
+}

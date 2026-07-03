@@ -1,0 +1,20 @@
+{
+  "name": "@intentum/design-tokens",
+  "version": "1.0.0",
+  "description": "INTENTUM™ DNA-OS design tokens — single source of truth, extracted from intentum-infinity (HK.8, docs/governance/DEBT-cross-repo-token-coupling-2026-07-02.md).",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "dist/tokens/legendary-tokens.cjs",
+  "files": [
+    "dist",
+    "registry",
+    "scripts"
+  ],
+  "scripts": {
+    "tokens:build": "node scripts/build.config.cjs"
+  },
+  "dependencies": {
+    "style-dictionary": "^4.4.0",
+    "js-yaml": "^4.1.1"
+  }
+}

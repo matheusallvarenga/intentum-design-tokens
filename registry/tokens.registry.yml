@@ -1,0 +1,1015 @@
+# INTENTUM™ DNA-OS · TOKENS REGISTRY
+# Source of truth for ALL design tokens — colors · typography · spacing · shadow · motion
+# Style Dictionary 4.0 ingests this and produces: CSS · Tailwind v3 · Tailwind v4 · DTCG · SCSS
+#
+# Authoritative for: tokens, OKLCH neutrals, Trinity Typography, Liquid Champagne, Top 5 Steals (codified)
+# Approved by: Matheus Allvarenga (2026-05-07)
+
+$schema: ./schemas/tokens-registry.schema.yml
+version: 1.2.0
+
+# ═══════════════════════════════════════════════════════════
+# COLOR — Dual-tier gold + OKLCH neutrals + Studios + Semantic INTENTUM
+# ═══════════════════════════════════════════════════════════
+
+color:
+  # ── BRAND GOLD — DUAL TIER ──
+  brand:
+    gold-deep:
+      $value: '#AE813D'
+      $type: color
+      $description: 'CANONICAL — Brand Manual V2 + canonical SVGs · ceremonial · Cinzel · focus rings · founding texts · achievement markers · print'
+      $extensions:
+        com.intentum.color-spaces:
+          hsl: '35 47% 46%'
+        com.intentum.provenance: high # confirmed in Manual V2 + SVG sources
+    gold-champagne:
+      $value: '#C9B298'
+      $type: color
+      $description: 'UI WORKHORSE — regular Studio accent · body italic emphasis · Hover-Reveal CTA target · badges · default icon fills · Liquid Gold/Champagne overlays'
+      $extensions:
+        com.intentum.color-spaces:
+          hsl: '32 27% 69%'
+        com.intentum.provenance: high
+    gold-bright:
+      $value: '#E4D8CA'
+      $type: color
+      $description: 'Lightest tone — gradient top · subtle highlights'
+      $extensions:
+        com.intentum.provenance: high
+    gold-soft:
+      $value: '#8D7556'
+      $type: color
+      $description: 'Pressed states · gradient bottom · Cinzel on light backgrounds'
+      $extensions:
+        com.intentum.provenance: high
+    gold:
+      $value: '{color.brand.gold-champagne}'
+      $type: color
+      $description: 'Default alias — UI workhorse'
+
+  # ── SURFACE LADDER (OKLCH-symmetric · ready for light-mode inversion) ──
+  # NOTE: $value is hex (DTCG primitive). OKLCH + HSL representations live in
+  # $extensions.com.intentum.color-spaces — Style Dictionary custom transformer
+  # (HSL→OKLCH · Sprint 3) reads from extensions to emit perceptually uniform output.
+  surface:
+    base:
+      $value: '#070709'
+      $type: color
+      $description: 'Body background — dominant 90%+ surface'
+      $extensions:
+        com.intentum.color-spaces:
+          oklch: 'oklch(0.18 0 0)' # near-black perceptually uniform
+          hsl: '240 5% 4%' # legacy HSL representation
+        com.intentum.provenance: high
+    elevate:
+      $value: '#141417'
+      $type: color
+      $description: 'Cards · elevated panels'
+      $extensions:
+        com.intentum.color-spaces:
+          oklch: 'oklch(0.21 0.005 285)'
+          hsl: '240 4% 8%'
+        com.intentum.provenance: high
+    elevate-2:
+      $value: '#1F1F22'
+      $type: color
+      $description: 'Modal · popover · dropdown'
+      $extensions:
+        com.intentum.color-spaces:
+          oklch: 'oklch(0.25 0.005 285)'
+          hsl: '240 4% 12%'
+    border:
+      $value: '#292929'
+      $type: color
+      $description: 'Hairlines · dividers'
+      $extensions:
+        com.intentum.color-spaces:
+          oklch: 'oklch(0.30 0 0)'
+          hsl: '0 0% 16%'
+    warm-deep:
+      $value: '#14110A'
+      $type: color
+      $description: 'Gradient stop 2 — founder card variant dark terminus · deep warm black (DA-002 · 2026-05-29)'
+      $extensions:
+        com.intentum.color-spaces:
+          oklch: 'oklch(0.09 0.012 60)'
+          hsl: '40 22% 6%'
+        com.intentum.use: gradient-stop
+        com.intentum.provenance: high # extracted from card.tsx founder variant
+    print:
+      $value: '#1C282F'
+      $type: color
+      $description: 'Print-only dark teal-navy per Brand Manual V2'
+      $extensions:
+        com.intentum.use: print-only
+
+  # ── TEXT (alpha-cream hierarchy · v1.1.1 legibility-corrected) ──
+  text:
+    primary:
+      $value: '#FAFAFA'
+      $type: color
+      $description: 'Body text · 100% alpha'
+      $extensions:
+        com.intentum.color-spaces:
+          oklch: 'oklch(0.98 0 0 / 1.0)'
+          hsl: '0 0% 98%'
+    mid:
+      $value: 'rgba(250, 250, 250, 0.82)'
+      $type: color
+      $description: 'Secondary text · 82% alpha (corrected from 0.68 — too dim)'
+    dim:
+      $value: 'rgba(250, 250, 250, 0.58)'
+      $type: color
+      $description: 'Muted text · 58% alpha (corrected from 0.42)'
+    faint:
+      $value: 'rgba(250, 250, 250, 0.32)'
+      $type: color
+      $description: 'Disabled · 32% alpha (corrected from 0.22)'
+    ceremonial:
+      $value: '{color.brand.gold-deep}'
+      $type: color
+      $description: 'Cinzel display · founding texts · achievement markers'
+    accent:
+      $value: '{color.brand.gold-champagne}'
+      $type: color
+      $description: 'Regular gold inline emphasis · body italics'
+
+  # ── STATUS SEMANTICS (walled off · only for state) ──
+  # NOTE: $value uses hex (DTCG primitive). HSL alternates live in $extensions.
+  status:
+    success:
+      $value: '#22C55E'
+      $type: color
+      $extensions:
+        com.intentum.color-spaces:
+          hsl: 'hsl(142 76% 51%)'
+    warning:
+      $value: '#F59E0B'
+      $type: color
+      $extensions:
+        com.intentum.color-spaces:
+          hsl: 'hsl(37 100% 52%)'
+    error:
+      $value: '#EF4444'
+      $type: color
+      $extensions:
+        com.intentum.color-spaces:
+          hsl: 'hsl(4 100% 62%)'
+    info:
+      $value: '#3B82F6'
+      $type: color
+      $extensions:
+        com.intentum.color-spaces:
+          hsl: 'hsl(211 100% 52%)'
+
+  # ── STUDIOS (mono-accent · all share gold · differentiate by surface depth) ──
+  studio:
+    design-system:
+      primary: '{color.brand.gold-champagne}'
+      ceremonial: '{color.brand.gold-deep}'
+      surface_default: '{color.surface.base}'
+    profile:
+      primary: '{color.brand.gold-champagne}'
+      ceremonial: '{color.brand.gold-deep}'
+      surface_default: '{color.surface.base}'
+      $description: 'Daily ritual surfaces · ceremonial dominante'
+    pkm:
+      primary: '{color.brand.gold-champagne}'
+      ceremonial: '{color.brand.gold-deep}'
+      surface_default: '{color.surface.base}'
+    business:
+      primary: '{color.brand.gold-champagne}'
+      ceremonial: '{color.brand.gold-deep}'
+      surface_default: '{color.surface.elevate-2}'
+      $description: 'Operacional · data-dense · deeper surface'
+    marketing:
+      primary: '{color.brand.gold-champagne}'
+      ceremonial: '{color.brand.gold-deep}'
+      surface_default: '{color.surface.elevate}'
+      $description: 'Cinzel hero · Profético register dominante'
+    content:
+      primary: '{color.brand.gold-champagne}'
+      ceremonial: '{color.brand.gold-deep}'
+      surface_default: '{color.surface.elevate}'
+      $description: 'Existencial register · long-form measure'
+    events:
+      primary: '{color.brand.gold-champagne}'
+      ceremonial: '{color.brand.gold-deep}'
+      surface_default: '{color.surface.elevate-2}'
+      $description: 'Ceremonial gold dominante · ritual surfaces'
+    media:
+      primary: '{color.brand.gold-champagne}'
+      ceremonial: '{color.brand.gold-deep}'
+      surface_default: '{color.surface.base}'
+
+  # ── SEMANTIC INTENTUM (Adriano prescription · brand DNA codificado) ──
+  semantic:
+    clareza:
+      $value: '{color.surface.base}'
+      $description: 'Pilar 1 — surface base · vazio = clareza · primeiro pilar do Método ITM'
+    conhecimento:
+      $value: '{color.surface.elevate}'
+      $description: 'Pilar 2 — camada acima da clareza · Conhecimento estruturado'
+    atitude:
+      $value: '{color.brand.gold-deep}'
+      $description: 'Pilar 3 — gold-deep · ação ceremonial · onde a verdade vira comando'
+    corpo:
+      $value: '{color.text.primary}'
+      $description: 'Tripartição — corpo · matéria densa · 100% alpha'
+    alma:
+      $value: '{color.text.mid}'
+      $description: 'Tripartição — alma · camada intermediária'
+    espirito:
+      $value: '{color.brand.gold-deep}'
+      $description: 'Tripartição — espírito · centelha cerimonial'
+    fragmentacao:
+      $value: '{color.status.error}'
+      $description: 'Inimigo raiz — alert vermelho'
+    modo-sobrevivencia:
+      $value: '{color.text.dim}'
+      $description: 'Sintoma público — cinza dim'
+    soberania:
+      $value: '{color.brand.gold-deep}'
+      $description: 'Outcome promise — gold-deep cerimonial'
+
+# ═══════════════════════════════════════════════════════════
+# TYPOGRAPHY — Trinity Contract (Bugatti steal · enforced)
+# ═══════════════════════════════════════════════════════════
+
+typography:
+  trinity:
+    $description: 'Hard role boundaries enforced by mind_ux_designer · NO mixing'
+
+    display_ceremonial:
+      family: Cinzel
+      role: 'Logo wordmark · ceremonial founding texts · print'
+      weights: [400, 500, 600, 700]
+      license: SIL OFL (Google Fonts)
+      authoritative_source: Brand Manual V2
+
+    display_digital:
+      family: 'Instrument Serif'
+      fallback: ['Source Serif 4', 'Georgia', 'serif']
+      role: 'h1, h2 ONLY · italic-emphasis · NEVER bold'
+      weights: [400]
+      style: italic
+      license: SIL OFL
+      $note: 'Temporary digital alternative until Cinzel digital optimization. Long-term goal: harmonize with Cinzel ceremonial.'
+
+    body_operational:
+      family: Montserrat
+      fallback: ['Inter Tight', 'Source Sans Pro', 'system-ui', 'sans-serif']
+      role: 'Everything operational — body · UI · buttons · navigation'
+      weights: [300, 400, 500, 600, 700]
+      license: SIL OFL
+      authoritative_source: Brand Manual V2
+
+    metadata_data:
+      family: 'JetBrains Mono'
+      fallback: ['Fira Code', 'monospace']
+      role: 'Numerics · 10-12px metadata at 0.05em tracking · code'
+      weights: [400, 500, 600]
+      license: SIL OFL
+
+    display_hero_cinematic:
+      family: Rajdhani
+      fallback: [Cinzel, sans-serif]
+      role: 'Cinematic 84px+ marketing hero ONLY'
+      weights: [500, 600, 700]
+      license: SIL OFL
+      $note: 'Lamborghini steal · sparingly used'
+
+  enforcement:
+    rule: 'Trinity Typography Contract — hard role boundaries'
+    enforced_by: mind_ux_designer (rubric · token_validation)
+    violations:
+      - 'Cinzel for body copy (illegible)'
+      - 'Instrument Serif at body sizes (visual noise)'
+      - 'Inter for numerics (use mono — data deserves data type)'
+      - 'Mixing display faces in single component'
+      - 'Bold (700) in Instrument Serif (italic is the only emphasis mechanism)'
+
+  # ── Scale — Minor Third 1.2x (base 16px) ──
+  scale:
+    ratio:
+      $value: 1.2
+      $type: number
+      $description: 'Minor Third musical ratio · perceptually balanced typography scale'
+    base:
+      $value: 16
+      $type: number
+      $description: 'Base font size in px · scale derives from this'
+    sizes:
+      '2xs':
+        $value: '0.579rem'
+        $type: dimension
+        $description: '~9px'
+      xs:
+        $value: '0.694rem'
+        $type: dimension
+        $description: '~11px'
+      sm:
+        $value: '0.833rem'
+        $type: dimension
+        $description: '~13px'
+      base:
+        $value: '1rem'
+        $type: dimension
+        $description: '16px'
+      lg:
+        $value: '1.2rem'
+        $type: dimension
+        $description: '~19px'
+      xl:
+        $value: '1.44rem'
+        $type: dimension
+        $description: '~23px'
+      '2xl':
+        $value: '1.728rem'
+        $type: dimension
+        $description: '~28px'
+      '3xl':
+        $value: '2.074rem'
+        $type: dimension
+        $description: '~33px'
+      '4xl':
+        $value: '2.488rem'
+        $type: dimension
+        $description: '~40px'
+      '5xl':
+        $value: '2.986rem'
+        $type: dimension
+        $description: '~48px'
+      cinematic:
+        $value: '5.25rem'
+        $type: dimension
+        $description: '~84px (Lamborghini · marketing hero only)'
+
+  weight:
+    light:
+      $value: 300
+      $type: fontWeight
+    normal:
+      $value: 400
+      $type: fontWeight
+    medium:
+      $value: 500
+      $type: fontWeight
+    semibold:
+      $value: 600
+      $type: fontWeight
+    bold:
+      $value: 700
+      $type: fontWeight
+
+  line-height:
+    none:
+      $value: 1.0
+      $type: number
+    tight:
+      $value: 1.25
+      $type: number
+    snug:
+      $value: 1.375
+      $type: number
+    normal:
+      $value: 1.5
+      $type: number
+    relaxed:
+      $value: 1.625
+      $type: number
+    loose:
+      $value: 1.75
+      $type: number
+
+  letter-spacing:
+    tight:
+      $value: '-0.04em'
+      $type: dimension
+      $description: 'display ≥48px (Krea-style)'
+    normal:
+      $value: '0.012em'
+      $type: dimension
+      $description: 'body (research-backed reading)'
+    metadata:
+      $value: '0.05em'
+      $type: dimension
+      $description: 'mono captions · uppercase'
+    wordmark:
+      $value: '0.06em'
+      $type: dimension
+      $description: 'Cinzel wordmark'
+
+  measure: # editorial line-length tokens (in ch)
+    narrow:
+      $value: '45ch'
+      $type: dimension
+    base:
+      $value: '65ch'
+      $type: dimension
+      $description: 'editorial sweet spot (Medium/NYT/Guardian)'
+    wide:
+      $value: '75ch'
+      $type: dimension
+    max:
+      $value: '80ch'
+      $type: dimension
+
+# ═══════════════════════════════════════════════════════════
+# SPACING — 4px base + section-rhythm 100px (Lambo steal)
+# ═══════════════════════════════════════════════════════════
+
+spacing:
+  base:
+    $value: 4
+    $type: number
+    $description: 'Base spacing unit in px · scale derives from this'
+  scale:
+    px:
+      $value: '1px'
+      $type: dimension
+    '0-5':
+      $value: '2px'
+      $type: dimension
+    '1':
+      $value: '4px'
+      $type: dimension
+    '1-5':
+      $value: '6px'
+      $type: dimension
+    '2':
+      $value: '8px'
+      $type: dimension
+    '2-5':
+      $value: '10px'
+      $type: dimension
+    '3':
+      $value: '12px'
+      $type: dimension
+    '3-5':
+      $value: '14px'
+      $type: dimension
+    '4':
+      $value: '16px'
+      $type: dimension
+    '5':
+      $value: '20px'
+      $type: dimension
+    '6':
+      $value: '24px'
+      $type: dimension
+    '7':
+      $value: '28px'
+      $type: dimension
+    '8':
+      $value: '32px'
+      $type: dimension
+    '9':
+      $value: '36px'
+      $type: dimension
+    '10':
+      $value: '40px'
+      $type: dimension
+    '11':
+      $value: '44px'
+      $type: dimension
+    '12':
+      $value: '48px'
+      $type: dimension
+    '14':
+      $value: '56px'
+      $type: dimension
+    '16':
+      $value: '64px'
+      $type: dimension
+    '20':
+      $value: '80px'
+      $type: dimension
+    '24':
+      $value: '96px'
+      $type: dimension
+    section:
+      $value: '100px'
+      $type: dimension
+      $description: 'Lamborghini section-rhythm steal'
+
+  content_width:
+    narrow:
+      $value: '320px'
+      $type: dimension
+    compact:
+      $value: '540px'
+      $type: dimension
+    reading:
+      $value: '680px'
+      $type: dimension
+    marketing:
+      $value: '780px'
+      $type: dimension
+    comfortable:
+      $value: '900px'
+      $type: dimension
+    wide:
+      $value: '1200px'
+      $type: dimension
+    max:
+      $value: '1400px'
+      $type: dimension
+      $description: 'Tailwind 2xl container'
+
+# ═══════════════════════════════════════════════════════════
+# SHAPE — Border radii
+# ═══════════════════════════════════════════════════════════
+
+rounded:
+  none:
+    $value: '0'
+    $type: dimension
+  xs:
+    $value: '2px'
+    $type: dimension
+    $description: 'tooltips'
+  sm:
+    $value: '4px'
+    $type: dimension
+    $description: 'badges · small buttons'
+  md:
+    $value: '8px'
+    $type: dimension
+    $description: 'default buttons · inputs'
+  lg:
+    $value: '12px'
+    $type: dimension
+    $description: 'smaller cards'
+  xl:
+    $value: '14px'
+    $type: dimension
+    $description: 'cards (Krea/Huly standard)'
+  '2xl':
+    $value: '20px'
+    $type: dimension
+    $description: 'premium cards (Liquid Champagne)'
+  full:
+    $value: '9999px'
+    $type: dimension
+    $description: 'pills · avatars'
+
+border_width:
+  '0':
+    $value: '0'
+    $type: dimension
+  thin:
+    $value: '1px'
+    $type: dimension
+  medium:
+    $value: '2px'
+    $type: dimension
+  thick:
+    $value: '3px'
+    $type: dimension
+
+# ═══════════════════════════════════════════════════════════
+# SHADOW — Depth Trinity (Liquid Gold + Liquid Champagne + Zero-Shadow)
+# ═══════════════════════════════════════════════════════════
+
+shadow:
+  none:
+    $value: 'none'
+    $type: shadow
+  sm:
+    $value: '0 1px 2px rgba(0,0,0,0.2)'
+    $type: shadow
+  md:
+    $value: '0 4px 6px rgba(0,0,0,0.3)'
+    $type: shadow
+
+  glow_gold:
+    $value: '0 0 15px rgba(174, 129, 61, 0.3)'
+    $description: 'gold-deep glow · Glowing button default'
+  glow_gold_hover:
+    $value: '0 0 25px rgba(174, 129, 61, 0.5)'
+    $description: 'gold-deep glow · Glowing button hover'
+  glow_champagne:
+    $value: '0 0 15px rgba(201, 178, 152, 0.3)'
+
+  lg_gold:
+    $value: '0 10px 40px rgba(201, 178, 152, 0.25)'
+    $description: 'Gold-tinted drop shadow · Academia Lendária pattern'
+
+  liquid_champagne:
+    $value: |
+      0 0 2px .5px rgba(0,0,0,0.2),
+      0 0 4px 1px rgba(0,0,0,0.1),
+      0 0 8px 2px rgba(0,0,0,0.05),
+      0 0 0 .5px #000,
+      inset 0 0 0 1px rgba(201,178,152,0.08),
+      inset 0 0 3px 1px rgba(201,178,152,0.10),
+      inset 0 .5px 0 .5px rgba(201,178,152,0.10)
+    $type: shadow
+    $description: 'TOP STEAL #2 · Krea 7-shadow recipe re-tinted in champagne · cards & elevated surfaces · render-engine UI feel'
+    $extensions:
+      com.intentum.source: krea (7-shadow inner-glow)
+      com.intentum.gate: '@media (prefers-reduced-transparency: no-preference)'
+
+# ═══════════════════════════════════════════════════════════
+# MOTION
+# ═══════════════════════════════════════════════════════════
+
+motion:
+  ease:
+    default:
+      $value: 'cubic-bezier(0.4, 0, 0.2, 1)'
+      $type: cubicBezier
+    emphasis:
+      $value: 'cubic-bezier(0.16, 1, 0.3, 1)'
+      $type: cubicBezier
+    linear:
+      $value: 'linear'
+      $type: cubicBezier
+      $description: 'Standard linear easing'
+
+  duration:
+    micro:
+      $value: '150ms'
+      $type: duration
+    short:
+      $value: '200ms'
+      $type: duration
+    medium:
+      $value: '300ms'
+      $type: duration
+    long:
+      $value: '500ms'
+      $type: duration
+
+  # Council amendment #2 (Sprint 3 Day 1) · keyframes split duration + iteration
+  # for parser determinism. Composer consumers reference both tokens.
+  keyframe:
+    shimmer:
+      duration:
+        $value: '1500ms'
+        $type: duration
+        $description: 'Liquid Gold button shimmer · duration'
+      iteration:
+        $value: 'infinite'
+        $description: 'CSS animation-iteration-count · non-canonical DTCG type'
+        $extensions:
+          com.intentum.css_property: animation-iteration-count
+    float:
+      duration:
+        $value: '3s'
+        $type: duration
+      iteration:
+        $value: 'infinite'
+        $extensions:
+          com.intentum.css_property: animation-iteration-count
+      timing:
+        $value: 'ease-in-out'
+        $extensions:
+          com.intentum.css_property: animation-timing-function
+    pulse_slow:
+      duration:
+        $value: '3s'
+        $type: duration
+      iteration:
+        $value: 'infinite'
+        $extensions:
+          com.intentum.css_property: animation-iteration-count
+      timing:
+        $value: 'ease-in-out'
+        $extensions:
+          com.intentum.css_property: animation-timing-function
+
+# ═══════════════════════════════════════════════════════════
+# GRADIENTS (cinematic — recovered for harmony · v3)
+# ═══════════════════════════════════════════════════════════
+
+gradient:
+  # Per Q2 (Sprint 3 Day 1) · gradients use $value as bare CSS string + $extensions for structured semantics
+  # Future-proof for DTCG community ratification of gradient as canonical type
+  hero:
+    $value: 'linear-gradient(170deg, #070709 0%, #1A150F 55%, #3A2F22 100%)'
+    $type: string
+    $description: 'Cinematic dark hero · gold-tinted bottom'
+    $extensions:
+      com.intentum.gradient:
+        type: linear
+        angle: '170deg'
+        stops:
+          - { color: '#070709', pos: '0%' }
+          - { color: '#1A150F', pos: '55%' }
+          - { color: '#3A2F22', pos: '100%' }
+  card:
+    $value: 'linear-gradient(180deg, #070709 0%, #14110A 100%)'
+    $type: string
+    $description: 'Subtle card surface gradient'
+    $extensions:
+      com.intentum.gradient:
+        type: linear
+        angle: '180deg'
+        stops:
+          - { color: '#070709', pos: '0%' }
+          - { color: '#14110A', pos: '100%' }
+  section:
+    $value: 'linear-gradient(170deg, #070709 0%, #1A150F 55%, #2D2418 100%)'
+    $type: string
+    $description: 'Section background · subtle gold descent'
+    $extensions:
+      com.intentum.gradient:
+        type: linear
+        angle: '170deg'
+        stops:
+          - { color: '#070709', pos: '0%' }
+          - { color: '#1A150F', pos: '55%' }
+          - { color: '#2D2418', pos: '100%' }
+  gold:
+    $value: 'linear-gradient(135deg, #E4D8CA 0%, #C9B298 50%, #8D7556 100%)'
+    $type: string
+    $description: 'Brand gold gradient · light-to-dark champagne'
+    $extensions:
+      com.intentum.gradient:
+        type: linear
+        angle: '135deg'
+        stops:
+          - { color: '#E4D8CA', pos: '0%' }
+          - { color: '#C9B298', pos: '50%' }
+          - { color: '#8D7556', pos: '100%' }
+  gold_shimmer:
+    $value: 'linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 60%)'
+    $type: string
+    $description: 'Shimmer overlay · used with motion.keyframe.shimmer for Liquid Gold button effect'
+    $extensions:
+      com.intentum.gradient:
+        type: linear
+        angle: '45deg'
+        purpose: shimmer_overlay
+        stops:
+          - { color: 'rgba(255,255,255,0)', pos: '40%' }
+          - { color: 'rgba(255,255,255,0.2)', pos: '50%' }
+          - { color: 'rgba(255,255,255,0)', pos: '60%' }
+
+# ═══════════════════════════════════════════════════════════
+# REGRA DOS 8% (enforced by lint)
+# ═══════════════════════════════════════════════════════════
+
+rules:
+  regra_dos_8_percent:
+    rule: 'Cor não-neutra (gold + status) ocupa ≤8% da área de qualquer screen single-screen'
+    enforcement: ralph-coverage-audit + design-md drift detection
+    rationale: 'Gold escassez = brand reveal. Cada aparição da cor é um momento de marca, não decoração.'
+    source: BVS doctrine + Krea/Lendário pattern observation
+
+# ═══════════════════════════════════════════════════════════
+# TOP STEALS (codified · cross-referenced)
+# ═══════════════════════════════════════════════════════════
+
+top_steals_codified:
+  hover_reveal_cta:
+    home: components.registry.yml#button.variants.hover-reveal
+    tokens_used: [color.brand.gold-champagne, color.text.primary, color.surface.base]
+
+  liquid_champagne:
+    home: shadow.liquid_champagne
+    tokens_used: [color.brand.gold-champagne]
+
+  trinity_typography:
+    home: typography.trinity
+    enforcement: mind_ux_designer rubric
+
+  oklch_symmetric:
+    home: color.surface ($value=hex · $extensions.com.intentum.color-spaces=oklch+hsl)
+    transformer: HSL→OKLCH (Style Dictionary custom — Sprint 3 · reads $extensions for perceptually uniform output)
+
+  section_rhythm:
+    home: spacing.scale.section + typography.scale.cinematic
+
+# ═══════════════════════════════════════════════════════════
+# STEAL BATCH 2 — codificado 2026-05-16 · Krea + Huly + Lamborghini
+# Validado em brand-guide.html + intentum-traffic-flows.html produção
+# patterns.registry.yml v1.2.0 é a fonte de choreography recipes
+# ═══════════════════════════════════════════════════════════
+
+steal_batch_2_codified:
+  conic_shimmer_marker:
+    source: krea (rotating sheen adapt)
+    validated: brand-guide.html section markers · intentum-traffic-flows.html [N] labels
+    css_property: '@property --marker-angle · background: conic-gradient(from var(--marker-angle))'
+    animation: 'marker-shimmer 6s linear infinite'
+    tokens_used:
+      - color.brand.gold-deep # #AE813D stop em 280deg
+      - color.brand.gold-champagne # #C9B298 stop em 60deg/200deg
+      - color.brand.gold-bright # #E4D8CA stop em 130deg
+      - color.brand.gold-soft # #8D7556 stop em 0deg/360deg
+    implementation: |
+      @property --marker-angle { syntax:'<angle>'; initial-value:0deg; inherits:false; }
+      .section-marker {
+        background: conic-gradient(from var(--marker-angle) at 50% 50%,
+          #8d7556 0deg, #c9b298 60deg, #e4d8ca 130deg, #c9b298 200deg, #ae813d 280deg, #8d7556 360deg);
+        -webkit-background-clip: text; animation: marker-shimmer 6s linear infinite;
+      }
+      @keyframes marker-shimmer { to { --marker-angle: 360deg; } }
+    gate: '@supports (background: conic-gradient(from 1deg, red, blue)) · fallback linear-gradient'
+    a11y: '@media (prefers-reduced-motion: reduce) { animation: none !important }'
+
+  krea_card_outline:
+    source: krea (glass button technique adapted to cards)
+    validated: brand-guide.html .sdm-card · .diagram-card
+    css_property: 'outline: 0.5px solid rgba(201,178,152,0.07); outline-offset: -1px'
+    tokens_used:
+      - color.brand.gold-champagne # rgba(201,178,152,0.07) — 7% opacity
+    rationale: |
+      outline does NOT affect box model · zero layout risk
+      Creates glass-panel inner edge — invisible at distance but present on close inspection
+      Distinct from border: visible even when element has overflow:hidden
+
+  huly_gradient_glow_cta:
+    source: huly (border-image technique adapted for border-radius compatibility)
+    validated: brand-guide.html .button.primary / button.tsx variants
+    css_property: '::before box-shadow glow halo · opacity: 0 → 1 on :hover'
+    tokens_used:
+      - color.brand.gold-deep # #AE813D · outer glow 0 0 24px 4px rgba(174,129,61,0.45)
+      - color.brand.gold-champagne # #C9B298 · inner glow 0 0 10px 2px rgba(201,178,152,0.65)
+    implementation: |
+      .btn-primary { position: relative; z-index: 1; overflow: visible; }
+      .btn-primary::before {
+        content: ''; position: absolute; inset: -3px; border-radius: inherit;
+        box-shadow: 0 0 24px 4px rgba(174,129,61,0.45), 0 0 10px 2px rgba(201,178,152,0.65);
+        opacity: 0; transition: 300ms cubic-bezier(0.16,1,0.3,1); z-index: -1;
+      }
+      .btn-primary:hover::before { opacity: 1; }
+    note: 'border-image incompatible with border-radius — pseudo-element approach required'
+
+  huly_marquee_infinityscroll:
+    source: huly (infinityScroll horizontal content stream)
+    validated: brand-guide.html [05] Anchor Phrases · intentum-traffic-flows.html tasks
+    css_property: 'animation: marquee-infinite 50s linear infinite'
+    tokens_used:
+      - motion.duration.long # 500ms — each item entrance when new
+      - motion.ease.emphasis # cubic-bezier(0.16,1,0.3,1) — spring feel on hover pause
+      - color.brand.gold-champagne # rgba(201,178,152,0.14) pill border resting
+    implementation: |
+      .marquee-track { display: flex; width: max-content; animation: marquee-infinite 50s linear infinite; }
+      @keyframes marquee-infinite { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      .marquee-wrap { mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%); }
+    content_rule: 'Content duplicated — animation moves exactly -50% so loop is seamless'
+    pause_on_hover: 'animation-play-state: paused on :hover'
+    gate: '@media (prefers-reduced-motion: reduce) { animation: none !important }'
+
+  cursor_radial_reveal:
+    source: huly (cursor-follow highlight layer)
+    validated: brand-guide.html #guide-cursor-reveal
+    css_property: 'mask-image: radial-gradient(350px circle at var(--cx, 50%) var(--cy, 50%), black 0%, transparent 100%)'
+    js_implementation: |
+      document.addEventListener('mousemove', (e) => {
+        document.documentElement.style.setProperty('--cx', e.clientX + 'px');
+        document.documentElement.style.setProperty('--cy', e.clientY + 'px');
+      });
+    tokens_used:
+      - color.brand.gold-champagne # rgba(201,178,152,0.018) — subtle highlight layer
+    layer_structure: 'Fixed div above noise · below layout · pointer-events:none'
+
+  lamborghini_section_fade:
+    source: lamborghini (cinema gradient photography-to-background)
+    validated: brand-guide.html .hero::after · intentum-traffic-flows.html .sdm-section
+    css_property: '::after { background: linear-gradient(to bottom, transparent 0%, var(--surface-base) 100%) }'
+    tokens_used:
+      - color.surface.base # #070709 — end color of fade
+    implementation: |
+      .section-hero { position: relative; }
+      .section-hero::after {
+        content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+        background: linear-gradient(to bottom, transparent 0%, #070709 100%);
+        pointer-events: none; z-index: 1;
+      }
+    rationale: 'Borrowed from how Lamborghini fades car photography into page surface · depth without shadow'
+
+# ═══════════════════════════════════════════════════════════
+# METADATA
+# ═══════════════════════════════════════════════════════════
+
+metadata:
+  authoritative_sources:
+    - Brand Manual V2 (gold-deep #AE813D · Cinzel · Montserrat)
+    - Lendário codebase (champagne #C9B298 · Surface ladder · Studios)
+    - Krea (Liquid Champagne · OKLCH ramp)
+    - Bugatti (Trinity Typography Contract)
+    - Luma Labs (zero-shadow · OKLCH inversion)
+    - Huly (Hover-Reveal CTA)
+    - Lamborghini (section-rhythm 100px · cinematic display 84px · section_fade)
+    - Academia Lendária (gold-tinted drop · alpha-cream text hierarchy)
+    - Krea v2 (conic_shimmer_marker · krea_card_outline) — Steal Batch 2 · 2026-05-16
+    - Huly v2 (huly_gradient_glow_cta · huly_marquee_infinityscroll · cursor_radial_reveal) — Steal Batch 2 · 2026-05-16
+  schema_version: 1.0
+  last_updated: 2026-05-17
+  approved_by: Matheus Allvarenga + Council MMOS
+  refactor_history:
+    - date: 2026-05-08
+      operation: 'Sprint 3 Day 1 COMPLETE (Phases 1+2+3 · Council Hybrid Path C-Lite · full DTCG conversion)'
+      dtcg_leaves_before: 34
+      dtcg_leaves_after: 131
+      net_added: 97
+      bare_scalars_remaining: 0
+      phase_breakdown:
+        phase_1: '60 dimensions wrapped (border_width · rounded · spacing · typography sizes/letter-spacing/measure · content_width)'
+        phase_2: '23 nodes (5 fontWeight · 3 shadow · 3 cubicBezier · 4 duration · 9 keyframe split per Council amendment #2 - shimmer/float/pulse_slow each split into duration+iteration+timing sub-tokens)'
+        phase_3: '22 nodes (5 gradients with $extensions structured · 6 line-height · 2 scale config · 1 spacing.base · 8 studio aliases formatted with curly-brace notation)'
+      schema_changes:
+        - 'tokens-registry.schema.yml · 9 sections relaxed to oneOf [string · dtcgToken]'
+        - 'motion.keyframe additionalProperties extended to accept nested groups'
+        - 'typography.scale.ratio + base accept dtcgToken'
+        - 'spacing.base accepts dtcgToken'
+        - "$type enum extended with 'string' for non-canonical CSS strings (gradients)"
+      preserved: 'all $value (resolved values unchanged) · 16 group aliases · 41 composite metadata · existing DTCG leaves untouched'
+      brief: docs/registry/_decisions/2026-05-08-Sprint3-Day1-DTCG-BareScalars-Audit.md
+      council_deliberation: docs/registry/_decisions/2026-05-08-Sprint3-Day1-DTCG-Strategy-Council-Deliberation.md
+      decided_by: Matheus Allvarenga (Hybrid Path C-Lite + Council 3 amendments · Q1)
+      sibling_decisions: 'Q2 (gradient $extensions structured) · Q3 (motion.keyframe SPLIT per Council · supersedes original Custom-string-extension) · Q4 (DTCG compliance policy added to governance.registry)'
+      verification:
+        - Layer 1 15/15 PASS post-conversion (15th = council-recruitment shipped same day)
+        - Layer 2 6/6 PASS unchanged
+        - DTCG composite-$value 0 violations
+        - DTCG sibling-key 0 violations
+        - Bare scalars audit: 0 remaining
+      day_1_status: COMPLETE
+      lock_event: 'macOS Privacy & Security revoked Desktop access mid-session 2026-05-08 ~21:50 BRT · this entry was blocked from persisting · re-applied 2026-05-08 ~22:35 BRT post-reboot + Privacy fix'
+      next: Day 2 · Style Dictionary 4.0 install + 3 transformers
+
+    - date: 2026-05-08
+      operation: 'Sprint 3 Day 2 · Style Dictionary 4.0 install + base config + first emit'
+      day_2_status: COMPLETE
+      style_dictionary_version: 4.4.0
+      installation:
+        package: style-dictionary@^4.0.0
+        installed_as: devDependency
+        result: 4.4.0 (latest stable)
+      build_pipeline_files_created:
+        - tools/style-dictionary/build.config.js (ESM · custom YAML parser registered via SD4 hooks.parsers API)
+        - tools/style-dictionary/build.js (orchestrator · pre-flight verify-layer1.cjs gate · spawnSync no-shell pattern per security policy)
+        - tools/style-dictionary/parsers/yaml-parser.js (js-yaml-based · pattern /\.ya?ml$/)
+      npm_scripts_added:
+        - 'tokens:build (node tools/style-dictionary/build.js)'
+        - 'tokens:verify (verify-layer1 + verify-layer2)'
+      first_emit_outputs:
+        files:
+          - tokens.css (8.6KB · CSS Custom Properties · descriptions as comments)
+          - _tokens.scss (7.9KB · SCSS variables)
+          - tailwind.tokens.js (9.3KB · ES6 constants for Tailwind v3 import)
+          - tokens.nested.json (13.1KB · DTCG-aligned hierarchy)
+          - tokens.flat.json (5.2KB · flat key-value)
+        total_emit_size: ~44KB
+      regression_baseline_committed: tests/token-emit-snapshots/ (Day 2 baseline · pre-Day-3-transformers)
+      pre_flight_gate: 'verify-layer1.cjs runs before every build · 15/15 PASS required to proceed'
+      day_3_planned:
+        - HSL→OKLCH transform (CSS @supports fallback pattern)
+        - Liquid Champagne formatter (7-stop shadow recipe · gate prefers-reduced-transparency)
+        - Composite flattener (DTCG composite → CSS-friendly)
+        - Tailwind v4 CSS-first format (@theme blocks · production-target migration)
+        - DTCG strict JSON export (Figma-import-ready)
+      verification:
+        - Layer 1 15/15 PASS · 0 fail (pre-flight + post-build)
+        - Layer 2 6/6 PASS unchanged
+        - Style Dictionary 4 build: SUCCESS · 5 platforms emit cleanly
+        - Aliases resolved at build time (color.brand.gold = #c9b298 not {color.brand.gold-champagne})
+        - $extensions ignored at output (correct · vendor-specific data)
+      cohort_23_05_unblocked: 'Track A (mind_voice copy gen) can now reference dist/tokens/tokens.css OR import from dist/tokens/tailwind.tokens.js · build pipeline operational'
+      decided_by: Matheus Allvarenga (Path A · Sprint 3 Day 2 sequencing)
+      next: Day 3 · 3 custom transformers + Tailwind v4 CSS-first + DTCG strict export
+
+    - date: 2026-05-09
+      operation: 'Sprint 3 Day 3 · Custom transforms + formats + filters · 7 platforms emit'
+      day_3_status: COMPLETE
+      day_3_files_added:
+        - tools/style-dictionary/filters/exclude-metadata.js (foundational · drops non-token branches)
+        - tools/style-dictionary/transforms/hsl-to-oklch.js (perceptually uniform · CIE Oklab algorithm)
+        - tools/style-dictionary/formats/tailwind-v4.js (CSS-first @theme blocks · production migration)
+        - tools/style-dictionary/formats/dtcg-strict.js (W3C canonical · Figma-import-ready · strips $extensions)
+      hooks_registered:
+        filters: [exclude-metadata]
+        transforms: [attribute/oklch-from-hsl]
+        formats: [css/tailwind-v4, json/dtcg-strict]
+      platforms_total: 7 # was 5 (Day 2) · +2 NEW (tailwind-v4, dtcg-strict)
+      day_3_emit_outputs:
+        files:
+          - tokens.css (8.4KB · CSS Custom Properties · metadata filtered)
+          - _tokens.scss (7.7KB · SCSS variables · metadata filtered)
+          - tailwind.tokens.js (9.1KB · Tailwind v3 ES6 · metadata filtered)
+          - tokens.nested.json (4.4KB · DTCG-aligned · metadata filtered · 73% reduction from Day 2 raw 15.6KB)
+          - tokens.flat.json (5.1KB · flat key-value)
+          - tailwind.v4.css (7.7KB · NEW · @theme blocks · production migration target)
+          - tokens.dtcg.json (19.2KB · NEW · W3C canonical · Figma-import-ready · 131 tokens exact match)
+        total_emit_size: ~62KB
+      design_decisions:
+        composite_flattener_skipped: 'Out-of-box SD4 path nesting handles keyframe split tokens correctly · custom flattener was unnecessary'
+        liquid_champagne_simple: 'Already a working shadow token via standard css/variables · @media gate handling deferred to Day 4 if needed'
+      regression_baseline_updated: tests/token-emit-snapshots/ (Day 3 baseline · 7 files)
+      verification:
+        - Layer 1 15/15 PASS · 0 fail
+        - Layer 2 6/6 PASS · 0 fail
+        - DTCG strict emits 131 tokens (exact match with source 131 DTCG leaves)
+        - Metadata filter strips 100% (tokens.nested.json · 0 metadata keys present)
+        - Tailwind v4 CSS prefix mapping correct (--color-* · --text-* · --spacing-* · etc.)
+        - Style Dictionary 4 build idempotent (re-run produces same output)
+      cohort_23_05_unblocked_v2: 'tailwind.v4.css and tokens.dtcg.json now consumable. Track A (mind_voice copy gen) can use Tailwind v4 @theme. Designer handoff via tokens.dtcg.json → Figma.'
+      decided_by: Matheus Allvarenga (Path A · Sprint 3 Day 3 continuation)
+      next: Sprint 3 closeout · CLAUDE.md update with build-pipeline commands · cohort 23/05 prep Track A start

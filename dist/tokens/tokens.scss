@@ -1,0 +1,135 @@
+
+// Do not edit directly, this file was auto-generated.
+
+$color-brand-gold-deep: #ae813d; // CANONICAL — Brand Manual V2 + canonical SVGs · ceremonial · Cinzel · focus rings · founding texts · achievement markers · print
+$color-brand-gold-champagne: #c9b298; // UI WORKHORSE — regular Studio accent · body italic emphasis · Hover-Reveal CTA target · badges · default icon fills · Liquid Gold/Champagne overlays
+$color-brand-gold-bright: #e4d8ca; // Lightest tone — gradient top · subtle highlights
+$color-brand-gold-soft: #8d7556; // Pressed states · gradient bottom · Cinzel on light backgrounds
+$color-brand-gold: #c9b298; // Default alias — UI workhorse
+$color-surface-base: #070709; // Body background — dominant 90%+ surface
+$color-surface-elevate: #141417; // Cards · elevated panels
+$color-surface-elevate-2: #1f1f22; // Modal · popover · dropdown
+$color-surface-border: #292929; // Hairlines · dividers
+$color-surface-warm-deep: #14110a; // Gradient stop 2 — founder card variant dark terminus · deep warm black (DA-002 · 2026-05-29)
+$color-surface-print: #1c282f; // Print-only dark teal-navy per Brand Manual V2
+$color-text-primary: #fafafa; // Body text · 100% alpha
+$color-text-mid: rgba(250, 250, 250, 0.82); // Secondary text · 82% alpha (corrected from 0.68 — too dim)
+$color-text-dim: rgba(250, 250, 250, 0.58); // Muted text · 58% alpha (corrected from 0.42)
+$color-text-faint: rgba(250, 250, 250, 0.32); // Disabled · 32% alpha (corrected from 0.22)
+$color-text-ceremonial: #ae813d; // Cinzel display · founding texts · achievement markers
+$color-text-accent: #c9b298; // Regular gold inline emphasis · body italics
+$color-status-success: #22c55e;
+$color-status-warning: #f59e0b;
+$color-status-error: #ef4444;
+$color-status-info: #3b82f6;
+$color-semantic-clareza: #070709; // Pilar 1 — surface base · vazio = clareza · primeiro pilar do Método ITM
+$color-semantic-conhecimento: #141417; // Pilar 2 — camada acima da clareza · Conhecimento estruturado
+$color-semantic-atitude: #ae813d; // Pilar 3 — gold-deep · ação ceremonial · onde a verdade vira comando
+$color-semantic-corpo: #fafafa; // Tripartição — corpo · matéria densa · 100% alpha
+$color-semantic-alma: rgba(250, 250, 250, 0.82); // Tripartição — alma · camada intermediária
+$color-semantic-espirito: #ae813d; // Tripartição — espírito · centelha cerimonial
+$color-semantic-fragmentacao: #ef4444; // Inimigo raiz — alert vermelho
+$color-semantic-modo-sobrevivencia: rgba(250, 250, 250, 0.58); // Sintoma público — cinza dim
+$color-semantic-soberania: #ae813d; // Outcome promise — gold-deep cerimonial
+$typography-scale-ratio: 1.2; // Minor Third musical ratio · perceptually balanced typography scale
+$typography-scale-base: 16; // Base font size in px · scale derives from this
+$typography-scale-sizes-2xs: 0.579rem; // ~9px
+$typography-scale-sizes-xs: 0.694rem; // ~11px
+$typography-scale-sizes-sm: 0.833rem; // ~13px
+$typography-scale-sizes-base: 1rem; // 16px
+$typography-scale-sizes-lg: 1.2rem; // ~19px
+$typography-scale-sizes-xl: 1.44rem; // ~23px
+$typography-scale-sizes-2xl: 1.728rem; // ~28px
+$typography-scale-sizes-3xl: 2.074rem; // ~33px
+$typography-scale-sizes-4xl: 2.488rem; // ~40px
+$typography-scale-sizes-5xl: 2.986rem; // ~48px
+$typography-scale-sizes-cinematic: 5.25rem; // ~84px (Lamborghini · marketing hero only)
+$typography-weight-light: 300;
+$typography-weight-normal: 400;
+$typography-weight-medium: 500;
+$typography-weight-semibold: 600;
+$typography-weight-bold: 700;
+$typography-line-height-none: 1;
+$typography-line-height-tight: 1.25;
+$typography-line-height-snug: 1.375;
+$typography-line-height-normal: 1.5;
+$typography-line-height-relaxed: 1.625;
+$typography-line-height-loose: 1.75;
+$typography-letter-spacing-tight: -0.04em; // display ≥48px (Krea-style)
+$typography-letter-spacing-normal: 0.012em; // body (research-backed reading)
+$typography-letter-spacing-metadata: 0.05em; // mono captions · uppercase
+$typography-letter-spacing-wordmark: 0.06em; // Cinzel wordmark
+$typography-measure-narrow: 45ch;
+$typography-measure-base: 65ch; // editorial sweet spot (Medium/NYT/Guardian)
+$typography-measure-wide: 75ch;
+$typography-measure-max: 80ch;
+$spacing-base: 4; // Base spacing unit in px · scale derives from this
+$spacing-scale-1: 4px;
+$spacing-scale-2: 8px;
+$spacing-scale-3: 12px;
+$spacing-scale-4: 16px;
+$spacing-scale-5: 20px;
+$spacing-scale-6: 24px;
+$spacing-scale-7: 28px;
+$spacing-scale-8: 32px;
+$spacing-scale-9: 36px;
+$spacing-scale-10: 40px;
+$spacing-scale-11: 44px;
+$spacing-scale-12: 48px;
+$spacing-scale-14: 56px;
+$spacing-scale-16: 64px;
+$spacing-scale-20: 80px;
+$spacing-scale-24: 96px;
+$spacing-scale-px: 1px;
+$spacing-scale-0-5: 2px;
+$spacing-scale-1-5: 6px;
+$spacing-scale-2-5: 10px;
+$spacing-scale-3-5: 14px;
+$spacing-scale-section: 100px; // Lamborghini section-rhythm steal
+$spacing-content-width-narrow: 320px;
+$spacing-content-width-compact: 540px;
+$spacing-content-width-reading: 680px;
+$spacing-content-width-marketing: 780px;
+$spacing-content-width-comfortable: 900px;
+$spacing-content-width-wide: 1200px;
+$spacing-content-width-max: 1400px; // Tailwind 2xl container
+$rounded-none: 0;
+$rounded-xs: 2px; // tooltips
+$rounded-sm: 4px; // badges · small buttons
+$rounded-md: 8px; // default buttons · inputs
+$rounded-lg: 12px; // smaller cards
+$rounded-xl: 14px; // cards (Krea/Huly standard)
+$rounded-2xl: 20px; // premium cards (Liquid Champagne)
+$rounded-full: 9999px; // pills · avatars
+$border-width-0: 0;
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+$shadow-none: none;
+$shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+$shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+$shadow-glow-gold: 0 0 15px rgba(174, 129, 61, 0.3); // gold-deep glow · Glowing button default
+$shadow-glow-gold-hover: 0 0 25px rgba(174, 129, 61, 0.5); // gold-deep glow · Glowing button hover
+$shadow-glow-champagne: 0 0 15px rgba(201, 178, 152, 0.3);
+$shadow-lg-gold: 0 10px 40px rgba(201, 178, 152, 0.25); // Gold-tinted drop shadow · Academia Lendária pattern
+$shadow-liquid-champagne: 0 0 2px .5px rgba(0,0,0,0.2), 0 0 4px 1px rgba(0,0,0,0.1), 0 0 8px 2px rgba(0,0,0,0.05), 0 0 0 .5px #000, inset 0 0 0 1px rgba(201,178,152,0.08), inset 0 0 3px 1px rgba(201,178,152,0.10), inset 0 .5px 0 .5px rgba(201,178,152,0.10); // TOP STEAL #2 · Krea 7-shadow recipe re-tinted in champagne · cards & elevated surfaces · render-engine UI feel
+$motion-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+$motion-ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+$motion-ease-linear: linear; // Standard linear easing
+$motion-duration-micro: 150ms;
+$motion-duration-short: 200ms;
+$motion-duration-medium: 300ms;
+$motion-duration-long: 500ms;
+$motion-keyframe-shimmer-duration: 1500ms; // Liquid Gold button shimmer · duration
+$motion-keyframe-shimmer-iteration: infinite; // CSS animation-iteration-count · non-canonical DTCG type
+$motion-keyframe-float-duration: 3s;
+$motion-keyframe-float-iteration: infinite;
+$motion-keyframe-float-timing: ease-in-out;
+$motion-keyframe-pulse-slow-duration: 3s;
+$motion-keyframe-pulse-slow-iteration: infinite;
+$motion-keyframe-pulse-slow-timing: ease-in-out;
+$gradient-hero: linear-gradient(170deg, #070709 0%, #1A150F 55%, #3A2F22 100%); // Cinematic dark hero · gold-tinted bottom
+$gradient-card: linear-gradient(180deg, #070709 0%, #14110A 100%); // Subtle card surface gradient
+$gradient-section: linear-gradient(170deg, #070709 0%, #1A150F 55%, #2D2418 100%); // Section background · subtle gold descent
+$gradient-gold: linear-gradient(135deg, #E4D8CA 0%, #C9B298 50%, #8D7556 100%); // Brand gold gradient · light-to-dark champagne
+$gradient-gold-shimmer: linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 60%); // Shimmer overlay · used with motion.keyframe.shimmer for Liquid Gold button effect

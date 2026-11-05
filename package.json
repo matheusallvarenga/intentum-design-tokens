@@ -15,6 +15,6 @@
   },
   "dependencies": {
     "style-dictionary": "^4.4.0",
-    "js-yaml": "^4.1.1"
+    "js-yaml": "^4.3.2"
   }
 }

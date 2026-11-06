@@ -1,6 +1,6 @@
 # Estado deste repositório
 
-**Situação:** congelado na v1.0.0 desde 05/11/2026. Somente leitura na prática; será arquivado quando nenhum consumidor usar mais a v1.0.0.
+**Situação:** arquivado em 06/11/2026; todos os consumidores migraram para `@intentum/design-system`. Congelado na v1.0.0 desde 05/11/2026; somente leitura.
 
 ## O que aconteceu
 
@@ -10,20 +10,18 @@
 | jul–out/2026 | O registry de origem, no `intentum-infinity`, evoluiu para 1.3.0. Este pacote não acompanhou. |
 | 27/10–05/11/2026 | Pesquisa e decisões do design system (documento-mestre em `intentum-infinity/docs/design/ds-intentum/README.md`). Aprovado um pacote único de design system, privado. |
 | 05/11/2026 | v2.0.0 construída e publicada como `@intentum/design-system` no repositório privado `matheusallvarenga/intentum-design-system`. Este repositório foi congelado para não quebrar os consumidores da v1.0.0. |
+| 06/11/2026 | `itm-legendary-infinity-os` migra para a v2.0.1 (PRs #29/#30) e `itm-social-media-dashboard` para a v2.0.2 (PR #9). PRs do Dependabot daqui fechados (#2, #3, #4). Repositório arquivado no GitHub. |
 
-## Quem ainda depende daqui
+## Quem dependia daqui
 
-| Consumidor | Dependência |
+| Consumidor | Hoje |
 |---|---|
-| `itm-legendary-infinity-os` | `"@intentum/design-tokens": "github:matheusallvarenga/intentum-design-tokens#v1.0.0"` |
-| `itm-social-media-dashboard` | idem |
+| `itm-legendary-infinity-os` | `"@intentum/design-system": "git+https://github.com/matheusallvarenga/intentum-design-system.git#v2.0.1"` (06/11/2026) |
+| `itm-social-media-dashboard` | `"@intentum/design-system": "git+https://github.com/matheusallvarenga/intentum-design-system.git#v2.0.2"` (06/11/2026) |
 
-## O que vai acontecer
+Nenhum `package.json` ou lockfile de branch principal em `~/projects` referencia mais `@intentum/design-tokens` (varredura de 06/11/2026). Branches antigas, anteriores às migrações, ainda apontam para `#v1.0.0`; elas continuam instalando porque um repositório público arquivado segue legível.
 
-1. Cada consumidor migra para `"@intentum/design-system": "github:matheusallvarenga/intentum-design-system#v2.0.0"` num PR próprio, depois de configurar o acesso autenticado ao repositório privado.
-2. Quando os dois tiverem migrado, este repositório é arquivado no GitHub (somente leitura). A tag `v1.0.0` continua existindo.
-
-## Regras até lá
+## Regras
 
 - Não mova, apague nem reescreva a tag `v1.0.0`.
 - Não adicione fontes, logos ou qualquer ativo de marca: o repositório é público.

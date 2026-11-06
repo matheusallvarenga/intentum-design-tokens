@@ -1,10 +1,10 @@
 # @intentum/design-tokens
 
-> **Congelado na v1.0.0 (desde 05/11/2026).** Este repositório não recebe mais mudanças de tokens. A v2.0.0 do design system INTENTUM™ foi publicada como `@intentum/design-system`, num repositório privado (`matheusallvarenga/intentum-design-system`), porque passou a incluir fontes, logos e ativos de uso interno que não podem ser públicos.
+> **Arquivado em 06/11/2026; todos os consumidores migraram para `@intentum/design-system`.** Congelado na v1.0.0 desde 05/11/2026. A v2 do design system INTENTUM™ vive no repositório privado `matheusallvarenga/intentum-design-system`, porque passou a incluir fontes, logos e ativos de uso interno que não podem ser públicos.
 >
-> - **Quem usa a v1.0.0** (`itm-legendary-infinity-os`, `itm-social-media-dashboard`) continua funcionando: a tag `v1.0.0` não será movida nem apagada.
-> - **Migração:** cada consumidor troca para `@intentum/design-system#v2.0.0` num PR próprio (Fase 2 do roteiro). Detalhes em [`docs/STATUS.md`](docs/STATUS.md).
-> - **Não abra PRs de tokens aqui.** Mudanças vão para o repositório novo.
+> - **Consumidores migrados:** `itm-legendary-infinity-os` (v2.0.1, 06/11) e `itm-social-media-dashboard` (v2.0.2, 06/11). Nenhum `package.json` ou lockfile de branch principal depende mais daqui.
+> - **A tag `v1.0.0` (commit `3a9acec`) continua existindo** e não será movida nem apagada: branches antigas que ainda apontam para ela seguem instalando.
+> - **Somente leitura.** Mudanças de tokens vão para o repositório novo. Detalhes em [`docs/STATUS.md`](docs/STATUS.md).
 
 Fonte única de verdade dos design tokens INTENTUM™ DNA-OS (cores, box-shadow, transition duration/timing).
 
